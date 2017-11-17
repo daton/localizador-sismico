@@ -1,7 +1,7 @@
 <dx-map 
 #map    
-center="Brooklyn Bridge,New York,NY" 
-[zoom]="14" 
+center="UNITEC, Campus Ecatepec, Ecatepec,MX" 
+[zoom]="16" 
 [height]="400" 
 width="100%" 
 [provider]="mapProviders[0].key"
@@ -9,9 +9,9 @@ width="100%"
 </dx-map>
 
 <div class="options">
-<div class="caption">Options</div>
+<div class="caption">Opciones</div>
 <div class="option">
-    <span>Map Provider</span>
+    <span>Prveedor de mapas</span>
     <dx-select-box  
         [dataSource]="mapProviders" 
         displayExpr="name" 
@@ -20,7 +20,7 @@ width="100%"
     </dx-select-box>
 </div>
 <div class="option">
-    <span>Map Type</span>
+    <span>Tipo de Mapa</span>
     <dx-select-box 
         [dataSource]="mapTypes" 
         displayExpr="name" 

@@ -21,9 +21,15 @@
       "styles": [
         "styles.css",
         "../node_modules/devextreme/dist/css/dx.common.css",
-        "../node_modules/devextreme/dist/css/dx.light.css"
+        "../node_modules/devextreme/dist/css/dx.light.css",
+        "../node_modules/clarity-ui/clarity-ui.min.css",
+        "../node_modules/clarity-icons/clarity-icons.min.css"
       ],
-      "scripts": [],
+      "scripts": [
+     
+      
+        "../node_modules/clarity-icons/clarity-icons.min.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",

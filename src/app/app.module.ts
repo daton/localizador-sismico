@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppRoutingModule } from './app-routing.module';
 import { DxMapModule, DxSelectBoxModule, DxCheckBoxModule} from 'devextreme-angular';
@@ -15,6 +16,7 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpModule,
     DxMapModule,DxSelectBoxModule,DxCheckBoxModule,DxButtonModule,
     ClarityModule.forRoot(),
   ],

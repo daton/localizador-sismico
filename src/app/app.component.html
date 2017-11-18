@@ -1,34 +1,29 @@
 
 <h1>Localizador sísmico</h1>
 <dx-map 
-#map    
-center="UNITEC, Campus Ecatepec, Ecatepec,MX" 
-[zoom]="16" 
-[height]="400" 
+[zoom]="11" 
+[height]="440" 
 width="100%" 
-[provider]="mapProviders[0].key"
-[type]="mapTypes[0].key">
+[controls]="true" 
+[markerIconSrc]="mapMarkerUrl" 
+[markers]="markers">
 </dx-map>
-
 <div class="options">
-<div class="caption">Opciones del mapita</div>
-<div class="option">
-    <span>Prveedor de mapas</span>
-    <dx-select-box  
-        [dataSource]="mapProviders" 
-        displayExpr="name" 
-        valueExpr="key" 
-        [(value)]="map.provider">
-    </dx-select-box>
+<div class="caption">Options</div>
+<div class="option">    
+    <dx-check-box 
+        id="use-custom-markers" 
+        [value]="true" 
+        text="Use custom marker icons" 
+        (onValueChanged)="checkCustomMarker($event)">
+    </dx-check-box>
 </div>
 <div class="option">
-    <span>Tipo de Mapa</span>
-    <dx-select-box 
-        [dataSource]="mapTypes" 
-        displayExpr="name" 
-        valueExpr="key" 
-        [(value)]="map.type">
-    </dx-select-box>
-</div>
+    <dx-button 
+        id="show-tooltips" 
+        text="Show all tooltips" 
+        (onClick)="showTooltips()">
+    </dx-button>
+</div>      
 </div>
 <router-outlet></router-outlet>

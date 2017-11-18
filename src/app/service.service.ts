@@ -1,41 +1,52 @@
 import { Injectable } from '@angular/core';
 
-@Injectable()
-export class MapSetting {
-    key: string;
-    name: string;
+export class Tooltip {
+    isShown: boolean;
+    text: string;
 }
 
-let mapTypes: MapSetting[] = [{
-    key: "roadmap",
-    name: "Default Map"
+export class Marker {
+    location: any;
+    tooltip: Tooltip;
+}
+
+let markerUrl = "https://js.devexpress.com/Demos/RealtorApp/images/map-marker.png";
+
+let markers: Marker[] = [{
+    location: [40.755833, -73.986389],
+    tooltip: {
+        isShown: false,
+        text: "Times Square"
+    }
 }, {
-    key: "satellite",
-    name: "Photographic Map"
+    location: "40.7825, -73.966111",
+    tooltip: {
+        isShown: false,
+        text: "Central Park"
+    }
 }, {
-    key: "hybrid",
-    name: "Hybrid Map"
+    location: {
+        lat: 40.753889,
+        lng: -73.981389
+    },
+    tooltip: {
+        isShown: false,
+        text: "Fifth Avenue"
+    }
+}, {
+    location: "Brooklyn Bridge,New York,NY",
+    tooltip: {
+        isShown: false,
+        text: "Brooklyn Bridge"
+    }
 }];
-
-let mapProviders: MapSetting[] = [{
-    key: "google",
-    name: "Google Dynamic Map",
-
-}, {
-    key: "googleStatic",
-    name: "Google Static Map"
-}, {
-    key: "bing",
-    name: "Bing Map"
-}];
-
 
 @Injectable()
 export class Service {
-    getMapTypes(): MapSetting[] {
-        return mapTypes;
+    getMarkerUrl() : string {
+        return markerUrl;
     }
-    getMapProviders(): MapSetting[] {
-        return mapProviders;
+    getMarkers() : Marker[] {
+        return markers;
     }
 }
